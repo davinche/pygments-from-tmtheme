@@ -15,3 +15,8 @@ are ones that are found at:
 Run `python tmTheme2pygment.py inputColourScheme.tmTheme ~/Desktop/output.css`
 Replace the first argument with the location of the tmTheme file you downloaded from the link above.
 Replace the second argument with where you want to output the css file.
+
+Or if you want to batch convert a bunch at a time you can use this.
+```
+find . -name '*.tmTheme' | sed 's/\.tmTheme$//' | xargs -I FILE_NAME python tmTheme2pygment.py "FILE_NAME.tmTheme" "FILE_NAME.css"
+```
